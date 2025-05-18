@@ -10,10 +10,10 @@ import pose5 from '../assets/foto/pose5.JPG'
 import pose6 from '../assets/foto/pose6.jpeg'
 import pose7 from '../assets/foto/pose7.jpeg'
 import pose8 from '../assets/foto/pose8.jpeg'
-
 import { useEffect, useState, useRef } from 'react'
 import { useParams } from "react-router-dom";
 import MusicPlayer from '../components/MusicPlayer'
+import Aos from 'aos'
 
 function Index() {
 
@@ -22,11 +22,20 @@ function Index() {
     const { nama } = useParams();
     const namaTamu = nama ? formatNamaFromSlug(nama) : "Tamu Undangan";
     const scrollTargetRef = useRef(null);
+    const [invitationOpened, setInvitationOpened] = useState(false);
 
 
     const scrollToContent = () => {
         scrollTargetRef.current?.scrollIntoView({ behavior: 'smooth' });
     };
+
+
+    const handleOpenInvitation = () => {
+        setInvitationOpened(true);
+        const audio = document.getElementById("wedding-music");
+        if (audio) audio.play();
+    };
+
 
 
     function formatNamaFromSlug(slug) {
@@ -38,6 +47,35 @@ function Index() {
 
 
     useEffect(() => {
+        Aos.init({
+            duration: 1000,
+            once: true,
+        });
+
+    }, [])
+
+
+    useEffect(() => {
+        document.body.style.overflowX = 'hidden';
+
+        if (!invitationOpened) {
+            document.body.style.overflowY = 'hidden';
+        } else {
+            document.body.style.overflowY = 'auto';
+        }
+
+        return () => {
+            document.body.style.overflowX = 'hidden';
+            document.body.style.overflowY = 'auto';
+        };
+    }, [invitationOpened]);
+
+
+
+    useEffect(() => {
+
+        window.scrollTo(0, 0);
+
         const interval = setInterval(() => {
             const now = new Date();
             const distance = targetDate - now;
@@ -62,12 +100,12 @@ function Index() {
 
     return (
         <div className="flex flex-col items-center bg-slate-400 w-screen min-h-screen">
-            <MusicPlayer />
-            <div className="max-w-[430px] w-screen min-h-screen bg-white flex flex-col gap-6">
+            <div className="relative max-w-[430px] w-screen min-h-screen bg-white flex flex-col gap-6">
+                <MusicPlayer invitationOpened={invitationOpened} />
                 <section
                     className="relative h-dvh w-full bg-cover bg-center bg-no-repeat flex flex-col items-center"
                     style={{
-                        backgroundImage: `url(${pose5})`,
+                        backgroundImage: `url(${cover2})`,
                     }}
                 >
                     <div className="absolute bottom-0 left-0 w-full h-1/3 bg-gradient-to-t from-white/60 to-transparent z-10"></div>
@@ -86,11 +124,21 @@ function Index() {
                             <span className='text-lg text-yellow-200 font-lora font-bold mt-3 mb-2'>{namaTamu}</span>
                         </div>
 
-                        <button
-                            onClick={scrollToContent}
-                            className='animate-bounce p-3 rounded-full border z-10 text-white mb-8 scale-[.8]'>
-                            <ChevronDown />
-                        </button>
+                        {
+                            !invitationOpened ? (
+                                <button
+                                    onClick={handleOpenInvitation}
+                                    className="bg-yellow-600 text-white font-lora px-3 py-2 rounded-xl text-sm mb-8 z-10">
+                                    Open Invitation
+                                </button>
+                            ) : (
+                                <button
+                                    onClick={scrollToContent}
+                                    className='animate-bounce p-3 rounded-full border z-10 text-white mb-8 scale-[.8]'>
+                                    <ChevronDown />
+                                </button>
+                            )
+                        }
                     </div>
 
                 </section>
@@ -148,7 +196,7 @@ function Index() {
                     <div className="flex flex-col items-center" data-aos="fade-up"
                         data-aos-duration="800">
                         <h2 className='font-lora text-xs font-bold text-white'>Kediaman Mempelai Pria</h2>
-                        <span className='font-lora text-xs text-white text-center'>Balerejo RT 01/RW 05, Balerejo, Balepanjang, Jatipurno,Wonogiri</span>
+                        <a href='https://maps.app.goo.gl/9tsxxmtWE4n5Y3oy9' className='font-lora text-xs text-white text-center hover:cursor-pointer'>Balerejo RT 01/RW 05, Balerejo, Balepanjang, Jatipurno,Wonogiri</a>
                     </div>
 
                     <div className="flex gap-2 items-center" data-aos="fade-up"
@@ -183,7 +231,7 @@ function Index() {
                     </div>
                     <iframe
                         className='w-full h-80 rounded-2xl'
-                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d6852.64799382842!2d111.10917001498578!3d-7.869055890758495!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e7981b49fdc6c49%3A0x8f701c82181a163e!2sRumah%20Dwi%20Largiyanto!5e0!3m2!1sid!2sid!4v1747420319812!5m2!1sid!2sid"
+                        src="https://www.google.com/maps/embed?pb=!1m17!1m12!1m3!1d3801.8225475128615!2d111.12851144219397!3d-7.808899503697368!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m2!1m1!2zN8KwNDgnMzUuNiJTIDExMcKwMDcnNDguMCJF!5e0!3m2!1sid!2sid!4v1747532074017!5m2!1sid!2sid"
                         style={{ border: 0 }}
                         allowFullScreen
                         loading="lazy"
@@ -203,7 +251,7 @@ function Index() {
                             data-aos-duration="800" />
                         <img src={pose4} alt='Galeri 4' className='w-full h-full object-cover rounded-xl row-span-2' data-aos="fade-left"
                             data-aos-duration="800" />
-                        <img src={cover2} alt='Galeri 5' className='w-full h-full object-cover rounded-xl row-span-1' data-aos="fade-right"
+                        <img src={pose5} alt='Galeri 5' className='w-full h-full object-cover rounded-xl row-span-1' data-aos="fade-right"
                             data-aos-duration="800" />
                         <img src={pose6} alt='Galeri 6' className='w-full h-full object-cover rounded-xl row-span-2'
                             data-aos="fade-right"
