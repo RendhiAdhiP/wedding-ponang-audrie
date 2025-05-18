@@ -128,7 +128,7 @@ function Index() {
                             !invitationOpened ? (
                                 <button
                                     onClick={handleOpenInvitation}
-                                    className="bg-yellow-600 text-white font-lora px-3 py-2 rounded-xl text-sm mb-8 z-10">
+                                    className="bg-yellow-600 text-white font-lora px-3 py-2 rounded-xl text-sm mb-14 z-10">
                                     Open Invitation
                                 </button>
                             ) : (
