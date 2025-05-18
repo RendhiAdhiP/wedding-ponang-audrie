@@ -56,25 +56,22 @@ function Index() {
 
 
     useEffect(() => {
-        document.body.style.overflowX = 'hidden';
-
         if (!invitationOpened) {
-            document.body.style.overflowY = 'hidden';
+            window.scrollTo(0, 0);
+            document.body.style.overflow = 'hidden';
         } else {
-            document.body.style.overflowY = 'auto';
+            document.body.style.overflow = 'auto';
         }
 
         return () => {
-            document.body.style.overflowX = 'hidden';
-            document.body.style.overflowY = 'auto';
+            document.body.style.overflow = 'auto';
         };
     }, [invitationOpened]);
 
 
 
-    useEffect(() => {
 
-        window.scrollTo(0, 0);
+    useEffect(() => {
 
         const interval = setInterval(() => {
             const now = new Date();
@@ -97,10 +94,16 @@ function Index() {
         return () => clearInterval(interval);
     }, []);
 
+    useEffect(() => {
+        if (!invitationOpened) {
+            window.scrollTo(0, 0);
+        }
+    }, [invitationOpened]);
 
     return (
-        <div className="flex flex-col items-center bg-slate-400 w-screen min-h-screen">
-            <div className="relative max-w-[430px] w-screen min-h-screen bg-white flex flex-col gap-6">
+        <div className={`flex flex-col items-center bg-slate-400 w-screen min-h-screen ${!invitationOpened ? 'fixed top-0 left-0 min-h-dvh overflow-hidden' : ''
+            }`}>
+            <div className="relative max-w-[430px] h-full h-full bg-white flex flex-col gap-6">
                 <MusicPlayer invitationOpened={invitationOpened} />
                 <section
                     className="relative h-dvh w-full bg-cover bg-center bg-no-repeat flex flex-col items-center"
@@ -237,6 +240,7 @@ function Index() {
                         loading="lazy"
                         referrerPolicy="no-referrer"
                     ></iframe>
+                    <a href="https://maps.app.goo.gl/9tsxxmtWE4n5Y3oy9" className='text-sm underline text-yellow-600'>Ke Google Maps</a>
                 </section>
 
                 <section className='flex flex-col items-center p-4 gap-4'>
