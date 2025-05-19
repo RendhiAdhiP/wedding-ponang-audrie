@@ -6,7 +6,7 @@ import pose1 from '../assets/foto/pose1.jpeg'
 import pose2 from '../assets/foto/pose2.jpeg'
 import pose3 from '../assets/foto/pose3.jpeg'
 import pose4 from '../assets/foto/pose4.jpeg'
-import pose5 from '../assets/foto/pose5.JPG'
+import pose5 from '../assets/foto/pose5.jpeg'
 import pose6 from '../assets/foto/pose6.jpeg'
 import pose7 from '../assets/foto/pose7.jpeg'
 import pose8 from '../assets/foto/pose8.jpeg'
@@ -265,9 +265,9 @@ function Index() {
                             data-aos-duration="800" />
                         <img src={pose8} alt='Galeri 3' className='w-full h-full object-cover rounded-xl row-span-1' data-aos="fade-left"
                             data-aos-duration="800" />
-                        <img src={pose4} alt='Galeri 4' className='w-full h-full object-cover rounded-xl row-span-2' data-aos="fade-left"
+                        <img src={pose5} alt='Galeri 4' className='w-full h-full object-cover rounded-xl row-span-2' data-aos="fade-left"
                             data-aos-duration="800" />
-                        <img src={pose5} alt='Galeri 5' className='w-full h-full object-cover rounded-xl row-span-1' data-aos="fade-right"
+                        <img src={pose4} alt='Galeri 5' className='w-full h-full object-cover rounded-xl row-span-1' data-aos="fade-right"
                             data-aos-duration="800" />
                         <img src={pose6} alt='Galeri 6' className='w-full h-full object-cover rounded-xl row-span-2'
                             data-aos="fade-right"
