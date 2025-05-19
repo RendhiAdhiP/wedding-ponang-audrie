@@ -162,7 +162,7 @@ function Index() {
                     <div className="flex flex-col" data-aos="fade-up"
                         data-aos-duration="800" >
                         <span className='font-sm text-3xl font-bold font-great-vibes text-center text-yellow-600'>Bismillahirrahmanirrahim</span>
-                        <h2 className='text-xs text-center font-lora'>Dengan memohon rahmat dan ridho Allah Subhanahu Wa Ta’ala, insyaaAllah kami akan menyelenggarakan acara pernikahan anak kami :</h2>
+                        <h2 className='text-xs text-center font-lora'>Dengan memohon rahmat dan ridho Allah Subhanahu Wa Ta’ala, insyaaAllah kami akan menyelenggarakan acara pernikahan anak kami:</h2>
                     </div>
                     <div className="flex self-start gap-2 mt-4">
                         <div className="flex flex-col gap-2" data-aos="fade-right"
@@ -172,11 +172,15 @@ function Index() {
                             <span className='font-lora text-xs'>Putri Bapak Sukar - Ibu Ngatirah</span>
                             <span className='font-lora text-xs'>Alamat: Pule RT. 01 RW. 03, Jatipurno</span>
                         </div>
-                        <img src={wanita} className='w-56 h-36 rounded-xl object-cover' alt="" />
+                        <div className="min-w-32 h-36">
+                            <img src={wanita} className='w-full h-full rounded-xl object-cover' alt="" />
+                        </div>
                     </div>
                     <span className='font-bold font-lora text-3xl'>&</span>
                     <div className="flex self-start gap-3">
-                        <img src={pria} className='w-36 h-36 rounded-xl object-cover' alt="" />
+                        <div className="min-w-32 h-36">
+                            <img src={pria} className='w-full h-full rounded-xl object-cover' alt="" />
+                        </div>
                         <div className="flex flex-col gap-2" data-aos="fade-left"
                             data-aos-duration="800">
                             <h3 className='font-lora font-medium text-xs'>Mempelai Pria</h3>
@@ -297,7 +301,7 @@ function Index() {
                         Namun jika memberi adalah bentuk tanda kasih, kami menyediakan informasi berikut:
                     </p>
 
-                    <div className="flex flex-col items-center gap-2 border p-4 rounded-xl shadow-md w-full max-w-xs bg-slate-100" data-aos="fade-up">
+                    <div className="flex flex-col items-center gap-2 border p-4 border-yellow-600 rounded-xl shadow-md w-full max-w-xs bg-white" data-aos="fade-up">
                         <span className="font-lora text-sm text-gray-700">BCA - AUDRIE FRANSISKA</span>
                         <span className="font-lora font-bold text-lg text-yellow-700">3271209604</span>
                         <button
@@ -309,7 +313,7 @@ function Index() {
                     </div>
 
 
-                    <div className="flex flex-col items-center gap-2 border p-4 rounded-xl shadow-md w-full max-w-xs bg-slate-100" data-aos="fade-up">
+                    <div className="flex flex-col items-center gap-2 border p-4 border-yellow-600 rounded-xl shadow-md w-full max-w-xs bg-white" data-aos="fade-up">
                         <span className="font-lora text-sm text-gray-700">BRI - PONANG SAPUTRO AJI</span>
                         <span className="font-lora font-bold text-lg text-yellow-700">694701005370507</span>
                         <button
