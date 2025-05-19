@@ -17,7 +17,7 @@ import Aos from 'aos'
 
 function Index() {
 
-    const targetDate = new Date("2025-06-05T14:00:00");
+    const targetDate = new Date("2025-06-23T08:00:00");
     const [timeLeft, setTimeLeft] = useState({ days: 0, hours: 0, minutes: 0, seconds: 0 });
     const { nama } = useParams();
     const namaTamu = nama ? formatNamaFromSlug(nama) : "Tamu Undangan";
@@ -44,6 +44,18 @@ function Index() {
             .map(kata => kata.charAt(0).toUpperCase() + kata.slice(1).toLowerCase())
             .join(" ");
     }
+
+
+    const handleCopy = (text) => {
+        navigator.clipboard.writeText(text)
+            .then(() => {
+                alert('Nomor rekening berhasil disalin!');
+            })
+            .catch(err => {
+                alert('Gagal menyalin nomor rekening.');
+                console.error('Copy failed:', err);
+            });
+    };
 
 
     useEffect(() => {
@@ -117,8 +129,8 @@ function Index() {
                         <div className="relative z-20 flex flex-col items-center pt-20" data-aos="fade-up"
                             data-aos-duration="750" >
                             <span className="font-lora text-xs text-yellow-600">the wedding of</span>
-                            <h1 className="font-great-vibes font-semibold text-5xl mt-2 text-yellow-600">Fatsa & David</h1>
-                            <span className="font-lora text-xs text-yellow-600 text-yellow-600">04 - 05 Juni 2025</span>
+                            <h1 className="font-great-vibes font-semibold text-5xl mt-2 text-yellow-600">Audrie & Ponang</h1>
+                            <span className="font-lora text-xs text-yellow-600 text-yellow-600">23 - 24 Juni 2025</span>
                         </div>
 
                         <div className="flex flex-col items-center px-8 py-2 bg-black/20 backdrop-blur text-white rounded-xl overflow-hidden border z-30 mt-60">
@@ -156,21 +168,21 @@ function Index() {
                         <div className="flex flex-col gap-2" data-aos="fade-right"
                             data-aos-duration="800">
                             <h3 className='font-lora font-medium text-xs '>Mempelai Wanita</h3>
-                            <span className='font-great-vibes text-2xl font-semibold text-yellow-600'>Annisa Ari Fatsa</span>
-                            <span className='font-lora text-xs'>Putri Dari Bapak Sarwono & Ibu Anastasia Purwantini</span>
-                            <span className='font-lora text-xs'>Alamat: Jl.Malabar Tengah V No 05, Mojosongo, Jebres, Surakarta</span>
+                            <span className='font-great-vibes text-2xl font-semibold text-yellow-600'>Rr. Audrie Fransiska</span>
+                            <span className='font-lora text-xs'>Putri Bapak Sukar - Ibu Ngatirah, Bapak Karyo Emban (Alm) - Ibu Sinah (Almh)</span>
+                            <span className='font-lora text-xs'>Alamat: Pule RT. 01 RW. 03, Jatipurno</span>
                         </div>
-                        <img src={wanita} className='w-48 h-36 rounded-xl object-cover' alt="" />
+                        <img src={wanita} className='w-56 h-36 rounded-xl object-cover' alt="" />
                     </div>
                     <span className='font-bold font-lora text-3xl'>&</span>
                     <div className="flex self-start gap-3">
-                        <img src={pria} className='w-56 h-36 rounded-xl object-cover' alt="" />
+                        <img src={pria} className='w-36 h-36 rounded-xl object-cover' alt="" />
                         <div className="flex flex-col gap-2" data-aos="fade-left"
                             data-aos-duration="800">
                             <h3 className='font-lora font-medium text-xs'>Mempelai Pria</h3>
-                            <span className='font-great-vibes text-2xl font-semibold text-yellow-600'>Dapit Maulana</span>
-                            <span className='font-lora text-xs'>Putra Dari Bapak Sadiman & Ibu Tuminem </span>
-                            <span className='font-lora text-xs'>Alamat: Balerejo RT 01/RW 05, Balerejo, Balepanjang, Jatipurno, Wonogiri</span>
+                            <span className='font-great-vibes text-2xl font-semibold text-yellow-600'>Bg. Ponang Saputro Aji</span>
+                            <span className='font-lora text-xs'>Putra Bapak Sutar & Ibu Pariyem </span>
+                            <span className='font-lora text-xs'>Alamat: Kandenan RT. 04 RW. 04, Jatipurno</span>
                         </div>
                     </div>
                 </section>
@@ -180,26 +192,26 @@ function Index() {
                     <div className="flex flex-col items-center" data-aos="fade-up"
                         data-aos-duration="800">
                         <h2 className='font-great-vibes text-3xl font-bold text-white'>Waktu Acara</h2>
-                        <span className='font-lora text-xs text-white'>04-05 Juni 2025</span>
+                        <span className='font-lora text-xs text-white'>23-24 Juni 2025</span>
                     </div>
                     <div className="flex gap-4" data-aos="fade-up"
                         data-aos-duration="800">
-                        <div className="flex flex-col items-center p-3">
+                        {/* <div className="flex flex-col items-center p-3">
                             <span className='text-xl font-great-vibes text-white font-semibold'>Akad Nikah</span>
-                            <span className='text-xs font-lora text-white'>Rabu, 04 Juni 2025</span>
+                            <span className='text-xs font-lora text-white'>Selasa, 23 Juni 2025</span>
                             <span className='text-sm font-lora font-bold text-white'>14:00 WIB - Selesai</span>
-                        </div>
+                        </div> */}
                         <div className="flex flex-col items-center p-3">
-                            <span className='text-xl font-great-vibes text-white font-semibold'>Resepsi</span>
-                            <span className='text-xs font-lora text-white'>Kamis, 05 Juni 2025</span>
-                            <span className='text-sm font-lora font-bold text-white'>08:00 WIB - selesai </span>
+                            <span className='text-xl font-great-vibes text-white font-semibold'>Akad & Resepsi</span>
+                            <span className='text-xs font-lora text-white'>Rabu, 24 Juni 2025</span>
+                            {/* <span className='text-sm font-lora font-bold text-white'>08:00 WIB - selesai </span> */}
                         </div>
                     </div>
 
                     <div className="flex flex-col items-center" data-aos="fade-up"
                         data-aos-duration="800">
-                        <h2 className='font-lora text-xs font-bold text-white'>Kediaman Mempelai Pria</h2>
-                        <a href='https://maps.app.goo.gl/9tsxxmtWE4n5Y3oy9' className='font-lora text-xs text-white text-center hover:cursor-pointer'>Balerejo RT 01/RW 05, Balerejo, Balepanjang, Jatipurno,Wonogiri</a>
+                        <h2 className='font-lora text-xs font-bold text-white'>Kediaman Mempelai Wanita</h2>
+                        <a href='https://maps.app.goo.gl/9tsxxmtWE4n5Y3oy9' className='font-lora text-xs text-white text-center hover:cursor-pointer'>Pule RT. 01 RW. 03, Jatipurno</a>
                     </div>
 
                     <div className="flex gap-2 items-center" data-aos="fade-up"
@@ -277,6 +289,38 @@ function Index() {
                     <span className='text-xs font-lora font-medium text-white' data-aos="fade-up"
                         data-aos-duration="800">Q.S Ar Rum 21</span>
                 </section>
+
+                <section className="flex flex-col items-center py-8 gap-4 p-4 bg-white">
+                    <h2 className="font-great-vibes text-3xl text-yellow-600 font-bold" data-aos="fade-up">Kado Pernikahan</h2>
+                    <p className="text-xs font-lora text-center text-gray-700" data-aos="fade-up">
+                        Doa restu Anda merupakan karunia yang sangat berarti bagi kami.
+                        Namun jika memberi adalah bentuk tanda kasih, kami menyediakan informasi berikut:
+                    </p>
+
+                    <div className="flex flex-col items-center gap-2 border p-4 rounded-xl shadow-md w-full max-w-xs bg-slate-100" data-aos="fade-up">
+                        <span className="font-lora text-sm text-gray-700">BCA - AUDRIE FRANSISKA</span>
+                        <span className="font-lora font-bold text-lg text-yellow-700">3271209604</span>
+                        <button
+                            onClick={() => handleCopy('3271209604')}
+                            className="bg-yellow-600 text-white text-xs px-3 py-1 rounded-md hover:bg-yellow-700"
+                        >
+                            Salin No Rekening
+                        </button>
+                    </div>
+
+
+                    <div className="flex flex-col items-center gap-2 border p-4 rounded-xl shadow-md w-full max-w-xs bg-slate-100" data-aos="fade-up">
+                        <span className="font-lora text-sm text-gray-700">BRI - PONANG SAPUTRO AJI</span>
+                        <span className="font-lora font-bold text-lg text-yellow-700">694701005370507</span>
+                        <button
+                            onClick={() => handleCopy('694701005370507')}
+                            className="bg-yellow-600 text-white text-xs px-3 py-1 rounded-md hover:bg-yellow-700"
+                        >
+                            Salin No Rekening
+                        </button>
+                    </div>
+                </section>
+
 
                 <section className='flex flex-col items-center gap-4 p-6 bg-white'>
                     <h2 className='font-great-vibes text-3xl font-bold text-yellow-600' data-aos="fade-up"
