@@ -113,7 +113,7 @@ function Index() {
     }, [invitationOpened]);
 
     return (
-        <div className={`flex flex-col items-center bg-slate-400 w-screen min-h-screen ${!invitationOpened ? 'fixed top-0 left-0 min-h-dvh overflow-hidden' : ''
+        <div className={`flex flex-col bg-white items-center bg-slate-400 w-screen min-h-screen ${!invitationOpened ? 'fixed top-0 left-0 min-h-dvh overflow-hidden' : ''
             }`}>
             <div className="relative max-w-[430px] h-full h-full bg-white flex flex-col gap-6">
                 <MusicPlayer invitationOpened={invitationOpened} />
@@ -169,7 +169,7 @@ function Index() {
                             data-aos-duration="800">
                             <h3 className='font-lora font-medium text-xs '>Mempelai Wanita</h3>
                             <span className='font-great-vibes text-2xl font-semibold text-yellow-600'>Rr. Audrie Fransiska</span>
-                            <span className='font-lora text-xs'>Putri Bapak Sukar - Ibu Ngatirah, Bapak Karyo Emban (Alm) - Ibu Sinah (Almh)</span>
+                            <span className='font-lora text-xs'>Putri Bapak Sukar - Ibu Ngatirah</span>
                             <span className='font-lora text-xs'>Alamat: Pule RT. 01 RW. 03, Jatipurno</span>
                         </div>
                         <img src={wanita} className='w-56 h-36 rounded-xl object-cover' alt="" />
@@ -203,7 +203,7 @@ function Index() {
                         </div> */}
                         <div className="flex flex-col items-center p-3">
                             <span className='text-xl font-great-vibes text-white font-semibold'>Akad & Resepsi</span>
-                            <span className='text-xs font-lora text-white'>Rabu, 24 Juni 2025</span>
+                            <span className='text-xs font-lora text-white'>Selasa, 24 Juni 2025</span>
                             {/* <span className='text-sm font-lora font-bold text-white'>08:00 WIB - selesai </span> */}
                         </div>
                     </div>
