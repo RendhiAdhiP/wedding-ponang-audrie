@@ -129,7 +129,7 @@ function Index() {
                         <div className="relative z-20 flex flex-col items-center pt-20" data-aos="fade-up"
                             data-aos-duration="750" >
                             <span className="font-lora text-xs text-yellow-600">the wedding of</span>
-                            <h1 className="font-great-vibes font-semibold text-5xl mt-2 text-yellow-600">Audrie & Ponang</h1>
+                            <h1 className="font-great-vibes font-semibold text-5xl mt-2 text-yellow-600">Ponang & Audrie</h1>
                             <span className="font-lora text-xs text-yellow-600 text-yellow-600">23 - 24 Juni 2025</span>
                         </div>
 
@@ -164,20 +164,8 @@ function Index() {
                         <span className='font-sm text-3xl font-bold font-great-vibes text-center text-yellow-600'>Bismillahirrahmanirrahim</span>
                         <h2 className='text-xs text-center font-lora'>Dengan memohon rahmat dan ridho Allah Subhanahu Wa Ta’ala, insyaaAllah kami akan menyelenggarakan acara pernikahan anak kami:</h2>
                     </div>
-                    <div className="flex self-start gap-2 mt-4">
-                        <div className="flex flex-col gap-2" data-aos="fade-right"
-                            data-aos-duration="800">
-                            <h3 className='font-lora font-medium text-xs '>Mempelai Wanita</h3>
-                            <span className='font-great-vibes text-2xl font-semibold text-yellow-600'>Rr. Audrie Fransiska</span>
-                            <span className='font-lora text-xs'>Putri Bapak Sukar - Ibu Ngatirah</span>
-                            <span className='font-lora text-xs'>Alamat: Pule RT. 01 RW. 03, Jatipurno</span>
-                        </div>
-                        <div className="min-w-32 h-36">
-                            <img src={wanita} className='w-full h-full rounded-xl object-cover' alt="" />
-                        </div>
-                    </div>
-                    <span className='font-bold font-lora text-3xl'>&</span>
-                    <div className="flex self-start gap-3">
+
+                    <div className="w-full justify-evenly flex self-start gap-3">
                         <div className="min-w-32 h-36">
                             <img src={pria} className='w-full h-full rounded-xl object-cover' alt="" />
                         </div>
@@ -187,6 +175,19 @@ function Index() {
                             <span className='font-great-vibes text-2xl font-semibold text-yellow-600'>Bg. Ponang Saputro Aji</span>
                             <span className='font-lora text-xs'>Putra Bapak Sutar & Ibu Pariyem </span>
                             <span className='font-lora text-xs'>Alamat: Kandenan RT. 04 RW. 04, Jatipurno</span>
+                        </div>
+                    </div>
+                    <span className='font-bold font-lora text-3xl'>&</span>
+                    <div className="w-full flex justify-evenly self-start gap-2 mt-4">
+                        <div className="flex flex-col gap-2" data-aos="fade-right"
+                            data-aos-duration="800">
+                            <h3 className='font-lora font-medium text-xs '>Mempelai Wanita</h3>
+                            <span className='font-great-vibes text-2xl font-semibold text-yellow-600'>Rr. Audrie Fransiska</span>
+                            <span className='font-lora text-xs'>Putri Bapak Sukar - Ibu Ngatirah</span>
+                            <span className='font-lora text-xs'>Alamat: Pule RT. 01 RW. 03, Jatipurno</span>
+                        </div>
+                        <div className="min-w-32 h-36">
+                            <img src={wanita} className='w-full h-full rounded-xl object-cover' alt="" />
                         </div>
                     </div>
                 </section>
@@ -302,22 +303,21 @@ function Index() {
                     </p>
 
                     <div className="flex flex-col items-center gap-2 border p-4 border-yellow-600 rounded-xl shadow-md w-full max-w-xs bg-white" data-aos="fade-up">
-                        <span className="font-lora text-sm text-gray-700">BCA - AUDRIE FRANSISKA</span>
-                        <span className="font-lora font-bold text-lg text-yellow-700">3271209604</span>
+                        <span className="font-lora text-sm text-gray-700">BRI - PONANG SAPUTRO AJI</span>
+                        <span className="font-lora font-bold text-lg text-yellow-700">694701005370507</span>
                         <button
-                            onClick={() => handleCopy('3271209604')}
+                            onClick={() => handleCopy('694701005370507')}
                             className="bg-yellow-600 text-white text-xs px-3 py-1 rounded-md hover:bg-yellow-700"
                         >
                             Salin No Rekening
                         </button>
                     </div>
 
-
                     <div className="flex flex-col items-center gap-2 border p-4 border-yellow-600 rounded-xl shadow-md w-full max-w-xs bg-white" data-aos="fade-up">
-                        <span className="font-lora text-sm text-gray-700">BRI - PONANG SAPUTRO AJI</span>
-                        <span className="font-lora font-bold text-lg text-yellow-700">694701005370507</span>
+                        <span className="font-lora text-sm text-gray-700">BCA - AUDRIE FRANSISKA</span>
+                        <span className="font-lora font-bold text-lg text-yellow-700">3271209604</span>
                         <button
-                            onClick={() => handleCopy('694701005370507')}
+                            onClick={() => handleCopy('3271209604')}
                             className="bg-yellow-600 text-white text-xs px-3 py-1 rounded-md hover:bg-yellow-700"
                         >
                             Salin No Rekening
