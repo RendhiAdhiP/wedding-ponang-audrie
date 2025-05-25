@@ -10,14 +10,14 @@ import pose5 from '../assets/foto/pose5.jpeg'
 import pose6 from '../assets/foto/pose6.jpeg'
 import pose7 from '../assets/foto/pose7.jpeg'
 import pose8 from '../assets/foto/pose8.jpeg'
-import { useEffect, useState, useRef } from 'react'
+import React, { useEffect, useState, useRef } from 'react'
 import { useParams } from "react-router-dom";
 import MusicPlayer from '../components/MusicPlayer'
 import Aos from 'aos'
 
 function Index() {
 
-    const targetDate = new Date("2025-06-23T08:00:00");
+    const targetDate = new Date("2025-06-27T08:00:00");
     const [timeLeft, setTimeLeft] = useState({ days: 0, hours: 0, minutes: 0, seconds: 0 });
     const { nama } = useParams();
     const namaTamu = nama ? formatNamaFromSlug(nama) : "Tamu Undangan";
@@ -130,7 +130,7 @@ function Index() {
                             data-aos-duration="750" >
                             <span className="font-lora text-xs text-yellow-600">the wedding of</span>
                             <h1 className="font-great-vibes font-semibold text-5xl mt-2 text-yellow-600">Ponang & Audrie</h1>
-                            <span className="font-lora text-xs text-yellow-600 text-yellow-600">23 - 24 Juni 2025</span>
+                            <span className="font-lora text-xs text-yellow-600 text-yellow-600">27 - 28 Juni 2025</span>
                         </div>
 
                         <div className="flex flex-col items-center px-8 py-2 bg-black/20 backdrop-blur text-white rounded-xl overflow-hidden border z-30 mt-60">
@@ -172,8 +172,8 @@ function Index() {
                         <div className="flex flex-col gap-2" data-aos="fade-left"
                             data-aos-duration="800">
                             <h3 className='font-lora font-medium text-xs'>Mempelai Pria</h3>
-                            <span className='font-great-vibes text-2xl font-semibold text-yellow-600'>Bg. Ponang Saputro Aji</span>
-                            <span className='font-lora text-xs'>Putra Bapak Sutar & Ibu Pariyem </span>
+                            <span className='font-great-vibes text-2xl font-semibold text-yellow-600'>Ponang Saputro Aji (Sipon)</span>
+                            <span className='font-lora text-xs'>Putra Bapak Sutar Gendon (Sopir) & Ibu Pariyem </span>
                             <span className='font-lora text-xs'>Alamat: Kandenan RT. 04 RW. 04, Jatipurno</span>
                         </div>
                     </div>
@@ -192,57 +192,59 @@ function Index() {
                     </div>
                 </section>
 
-
-                <section className='flex flex-col items-center mt-8 gap-6 bg-yellow-600 py-8'>
-                    <div className="flex flex-col items-center" data-aos="fade-up"
-                        data-aos-duration="800">
-                        <h2 className='font-great-vibes text-3xl font-bold text-white'>Waktu Acara</h2>
-                        <span className='font-lora text-xs text-white'>23-24 Juni 2025</span>
+                <section className="flex flex-col items-center mt-8 gap-6 bg-yellow-600 py-8">
+                    <div className="flex flex-col items-center" data-aos="fade-up" data-aos-duration="800">
+                        <h2 className="font-great-vibes text-3xl font-bold text-white">Waktu Acara</h2>
+                        {/* <span className="font-lora text-xs text-white">27–28 Juni 2025</span> */}
                     </div>
-                    <div className="flex gap-4" data-aos="fade-up"
-                        data-aos-duration="800">
+
+                    <div className="flex gap-4" data-aos="fade-up" data-aos-duration="800">
                         {/* <div className="flex flex-col items-center p-3">
-                            <span className='text-xl font-great-vibes text-white font-semibold'>Akad Nikah</span>
-                            <span className='text-xs font-lora text-white'>Selasa, 23 Juni 2025</span>
-                            <span className='text-sm font-lora font-bold text-white'>14:00 WIB - Selesai</span>
+                            <h3 className="text-xl font-great-vibes text-white font-semibold">Akad Nikah</h3>
+                            <span className="text-xs font-lora text-white">Selasa, 23 Juni 2025</span>
+                            <span className="text-sm font-lora font-bold text-white">14:00 WIB – Selesai</span>
                         </div> */}
+
                         <div className="flex flex-col items-center p-3">
-                            <span className='text-xl font-great-vibes text-white font-semibold'>Akad & Resepsi</span>
-                            <span className='text-xs font-lora text-white'>Selasa, 24 Juni 2025</span>
-                            {/* <span className='text-sm font-lora font-bold text-white'>08:00 WIB - selesai </span> */}
+                            <h3 className="text-xl font-great-vibes text-white font-semibold">Ngunduh Mantu</h3>
+                            <span className="text-xs font-lora text-white">Jum'at, 27 Juni – Sabtu, 28 Juni 2025</span>
+                            <div className="flex flex-col items-center mt-2" data-aos="fade-up" data-aos-duration="800">
+                                <h4 className="font-lora text-xs font-bold text-white">Kediaman Mempelai Pria</h4>
+                                <a
+                                    href="https://maps.app.goo.gl/LAZhpKjmcVDZDMDX7"
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    className="font-lora text-xs text-white text-center hover:underline hover:cursor-pointer"
+                                >
+                                    Kandenan RT. 04 RW. 04, Jatipurno
+                                </a>
+                            </div>
+                            {/* <span className="text-sm font-lora font-bold text-white">08:00 WIB – Selesai</span> */}
                         </div>
                     </div>
 
-                    <div className="flex flex-col items-center" data-aos="fade-up"
-                        data-aos-duration="800">
-                        <h2 className='font-lora text-xs font-bold text-white'>Kediaman Mempelai Wanita</h2>
-                        <a href='https://maps.app.goo.gl/9tsxxmtWE4n5Y3oy9' className='font-lora text-xs text-white text-center hover:cursor-pointer'>Pule RT. 01 RW. 03, Jatipurno</a>
-                    </div>
-
-                    <div className="flex gap-2 items-center" data-aos="fade-up"
-                        data-aos-duration="800">
-                        <div className="flex gap-1 flex-col items-center">
-                            <span className="py-2 px-3 text-sm font-medium bg-white rounded-md text-yellow-600 font-lora ">{timeLeft.days}</span>
-                            <span className='text-xs text-white font-lora'>Hari</span>
-                        </div>
-                        <span className='font-lora text-white font-bold text-2xl mb-5add'>:</span>
-                        <div className="flex gap-1 flex-col items-center">
-                            <span className="py-2 px-3 text-sm font-medium bg-white rounded-md text-yellow-600 font-lora ">{timeLeft.hours}</span>
-                            <span className='text-xs text-white font-lora'>Jam</span>
-                        </div>
-                        <span className='font-lora text-white font-bold text-2xl mb-5add'>:</span>
-                        <div className="flex gap-1 flex-col items-center">
-                            <span className="py-2 px-3 text-sm font-medium bg-white rounded-md text-yellow-600 font-lora ">{timeLeft.minutes}</span>
-                            <span className='text-xs text-white font-lora'>Menit</span>
-                        </div>
-                        <span className='font-lora text-white font-bold text-2xl mb-5add'>:</span>
-
-                        <div className="flex gap-1 flex-col items-center">
-                            <span className="py-2 px-3 text-sm font-medium bg-white rounded-md text-yellow-600 font-lora ">{timeLeft.seconds}</span>
-                            <span className='text-xs text-white font-lora'>Detik</span>
-                        </div>
+                    <div className="flex gap-2 items-center" data-aos="fade-up" data-aos-duration="800">
+                        {[
+                            { label: 'Hari', value: timeLeft.days },
+                            { label: 'Jam', value: timeLeft.hours },
+                            { label: 'Menit', value: timeLeft.minutes },
+                            { label: 'Detik', value: timeLeft.seconds },
+                        ].map((item, index) => (
+                            <React.Fragment key={item.label}>
+                                <div className="flex flex-col items-center gap-1">
+                                    <span className="py-2 px-3 text-sm font-medium bg-white rounded-md text-yellow-600 font-lora">
+                                        {item.value}
+                                    </span>
+                                    <span className="text-xs text-white font-lora">{item.label}</span>
+                                </div>
+                                {index < 3 && (
+                                    <span className="font-lora text-white font-bold text-2xl">:</span>
+                                )}
+                            </React.Fragment>
+                        ))}
                     </div>
                 </section>
+
 
                 <section className='flex flex-col items-center mt-6 p-4 gap-6' data-aos="fade-right"
                     data-aos-duration="800">
@@ -251,13 +253,13 @@ function Index() {
                     </div>
                     <iframe
                         className='w-full h-80 rounded-2xl'
-                        src="https://www.google.com/maps/embed?pb=!1m17!1m12!1m3!1d3801.8225475128615!2d111.12851144219397!3d-7.808899503697368!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m2!1m1!2zN8KwNDgnMzUuNiJTIDExMcKwMDcnNDguMCJF!5e0!3m2!1sid!2sid!4v1747532074017!5m2!1sid!2sid"
+                        src="https://www.google.com/maps/embed?pb=!1m17!1m12!1m3!1d3952.8619840833044!2d111.14952467500504!3d-7.804432392215874!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m2!1m1!2zN8KwNDgnMTYuMCJTIDExMcKwMDknMDcuNiJF!5e0!3m2!1sid!2sid!4v1748162800658!5m2!1sid!2sid"
                         style={{ border: 0 }}
                         allowFullScreen
                         loading="lazy"
                         referrerPolicy="no-referrer"
                     ></iframe>
-                    <a href="https://maps.app.goo.gl/9tsxxmtWE4n5Y3oy9" className='text-sm underline text-yellow-600'>Ke Google Maps</a>
+                    <a href="https://maps.app.goo.gl/LAZhpKjmcVDZDMDX7" className='text-sm underline text-yellow-600'>Ke Google Maps</a>
                 </section>
 
                 <section className='flex flex-col items-center p-4 gap-4'>
